@@ -54,7 +54,7 @@ describe('Credit Card Validator form', () => {
   });
 
   testInvalidCoords(
-    'After entering coordinates %s, a validation error (custom error) should occur',
+    'After input coordinates %s, a validation error (custom error) should occur',
     async (inputText) => {
       await page.goto(baseUrl);
       const messageInput = await page.waitForSelector('.timeline-editor-form-text_input');
@@ -73,7 +73,7 @@ describe('Credit Card Validator form', () => {
   );
 
   testValidCoords(
-    'After entering coordinates %ы, the modal window closes and a message appears with these coordinates', 
+    'After input coordinates %s, the modal window closes and a message appears with these coordinates', 
     async (inputText, expected) => {
       await page.goto(baseUrl);
       const messageInput = await page.waitForSelector('.timeline-editor-form-text_input');
