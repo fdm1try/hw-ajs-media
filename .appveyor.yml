@@ -1,0 +1,31 @@
+image: Ubuntu1804  # образ для сборки
+
+stack: node 16  # окружение
+
+branches:
+  only:
+    - master  # ветка git
+
+cache: node_modules  # кеширование
+
+install:
+  - npm install  # команда установки зависимостей
+
+build: off  # отключаем встроенную в appveyor систему сборки
+
+build_script:
+  - npm run build   # команда сборки
+
+test_script:
+  - npm run lint && npm run e2e-test  # скрипт тестирования
+
+environment:
+  access_token:
+    secure: wgsebYCjjiKhKmCiQkoOo6wo9JwpOQNJl0xt6TVQhOygykH47mzaaFNXTrOPJL7W
+
+on_success: # скрипт деплоя
+  - git config --global credential.helper store
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
+  - git config --global user.email "d.a.fedorov90@gmail.com"
+  - git config --global user.name "fdm1try"
+  - npm run deploy
