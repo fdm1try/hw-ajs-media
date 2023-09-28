@@ -1,0 +1,224 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.timeline-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    top: 0;
+    left: 0;
+}
+
+.timeline {
+    background: rgb(143, 183, 214);
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.timeline-messages {
+    width: 87%;
+    max-width: 800px;
+    margin-right: 3%;
+    display: flex;    
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.timeline-message {
+    background: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    
+}
+
+.timeline-message-body {
+    display: flex;
+}
+
+.timeline-message-date {
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.timeline-message-content {
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.timeline-message-content-audio {
+    width: 100%;
+}
+
+.timeline-message-content-video {
+    border-radius: 10px;
+    max-height: 300px;
+}
+
+.timeline-editor-video-preview {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-height: 350px;
+    height: 70%;
+    background: black;
+    border-radius: 20px 0 0 0;
+
+}
+
+.timeline-message-footer {
+    padding: 5px 20px;
+}
+
+.timeline-message-footer-location {
+    font-size: 12px;
+}
+
+.timeline-editor-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgb(72, 116, 170);
+}
+
+.timeline-editor-form {
+    width: 100%;
+}
+
+.timeline-editor {
+    display: flex;
+    gap: 30px;
+}
+
+.timeline-editor-form-text_input {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.timeline-editor-form-text_input:focus {
+    outline: none;
+}
+
+.timeline-editor-controls {
+    display: flex;
+    flex-shrink: 0;
+    gap: 20px;
+}
+
+.timeline-editor-controls button {
+    background: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.timeline-record-time {
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 0 5px;
+}
+
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+}
+
+.modal .modal-title {
+    border-radius: 10px 10px 0 0; 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px 30px;
+    width: 100%;
+    background-color: rgb(225, 225, 225);
+    border-bottom: 2px solid black;
+    text-align: left;
+}
+
+.modal .modal-content {
+    padding: 15px 30px;
+    background: white;
+    text-align: left;
+}
+
+.modal .modal-form {
+    background: white;
+    padding: 0 30px;
+}
+
+.modal .modal-input {
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 40px;
+    border: 2px solid gray;
+}
+
+.modal .modal-controls {
+    padding: 15px 30px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.modal .modal-controls button {
+    padding: 10px 30px;
+    border-radius: 7px;
+    border: none;
+    min-width: 100px;
+}
+
+.modal .modal-controls button:hover {
+    cursor: pointer;
+}
+
+.modal .modal-controls-confirm_button {
+    background: rgb(48, 95, 48);
+    color: white;
+}
+
+.modal .modal-controls-confirm_button:hover {
+    background: rgb(77, 152, 77);
+}
+
+.modal .modal-controls-cancel_button {
+    background: rgb(90, 18, 18);
+    color: white;
+}
+
+.modal .modal-controls-cancel_button:hover {
+    background: rgb(122, 25, 25);
+}
+
